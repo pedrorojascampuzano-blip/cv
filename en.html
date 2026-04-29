@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pedro Rojas Campuzano · CV</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
+
+  :root {
+    --ink: #0a0a0a;
+    --grey-1: #444;
+    --grey-2: #777;
+    --grey-3: #b8b8b8;
+    --rule: #d8d8d8;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.4pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+
+  .mono { font-family: "SF Mono", "Menlo", "Roboto Mono", monospace; }
+
+  header {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  header .name {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin: 0;
+  }
+  header .role {
+    font-size: 9.6pt;
+    color: var(--grey-1);
+    margin-top: 5px;
+    letter-spacing: 0.2px;
+  }
+  header .meta {
+    text-align: right;
+    font-size: 8.6pt;
+    color: var(--grey-1);
+    line-height: 1.55;
+    white-space: nowrap;
+  }
+  header .meta a { color: var(--grey-1); text-decoration: none; }
+
+  .summary {
+    font-size: 9.4pt;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    color: var(--ink);
+    text-align: justify;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    gap: 24px;
+  }
+
+  h2 {
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  h2::before {
+    content: "// ";
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  section { margin-bottom: 16px; page-break-inside: auto; }
+  section:last-child { margin-bottom: 0; }
+
+  aside .block { margin-bottom: 16px; }
+  aside .block:last-child { margin-bottom: 0; }
+
+  aside ul { list-style: none; padding: 0; margin: 0; font-size: 8.9pt; line-height: 1.7; }
+  aside ul li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+  aside ul li .lbl { color: var(--grey-1); }
+  aside ul li .val { color: var(--ink); text-align: right; }
+
+  aside .tags {
+    font-size: 8.9pt;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  aside .edu p {
+    margin: 0 0 9px 0;
+    font-size: 8.9pt;
+    line-height: 1.5;
+  }
+  aside .edu .school { font-weight: 600; }
+  aside .edu .deg { color: var(--grey-1); }
+
+  .job {
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .job .row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .job .title {
+    font-size: 9.6pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .job .dates {
+    font-size: 8.4pt;
+    color: var(--grey-2);
+    font-family: "SF Mono", "Menlo", monospace;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+  }
+  .job .org {
+    font-size: 8.9pt;
+    color: var(--grey-1);
+    margin-bottom: 6px;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .job ul li {
+    padding-left: 11px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .job ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+  }
+
+  .projects-section { page-break-inside: avoid; break-inside: avoid; }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+  .pair {
+    font-size: 8.9pt;
+    line-height: 1.48;
+    padding-left: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pair .key { font-weight: 600; display: block; }
+  .pair .sep { display: none; }
+  .pair .desc { color: var(--grey-1); }
+
+  .ai-list { font-size: 9pt; line-height: 1.5; }
+  .ai-list p {
+    margin: 0 0 5px 0;
+    padding-left: 11px;
+    position: relative;
+  }
+  .ai-list p::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--grey-2);
+  }
+  .ai-list strong { font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 class="name">Pedro Rojas Campuzano</h1>
+    <div class="role">Chief of Staff · Operations &amp; Systems · AI Implementation</div>
+  </div>
+  <div class="meta">
+    Mexico City, MX<br>
+    +52 55 9186 1118<br>
+    pedro.rojas.campuzano@gmail.com<br>
+    linkedin.com/in/pedro-rojas-campuzano
+  </div>
+</header>
+
+<div class="summary">
+Operator and project manager with 7+ years running complex, multi-stakeholder programs: from 1,550 MW solar portfolios and 250,000+ hectare carbon-credit projects to cross-border operations for a venture-backed AI startup. Civil engineer by training, systems thinker by practice; I design and maintain my own AI tooling (personal RAG, custom agent libraries, MCP servers, automation pipelines) and use it daily for work and experimentation. Trilingual: Spanish native, English professional, Mandarin intermediate.
+</div>
+
+<div class="grid">
+
+  <aside>
+
+    <div class="block">
+      <h2>Languages</h2>
+      <ul>
+        <li><span class="lbl">Spanish</span><span class="val">Native</span></li>
+        <li><span class="lbl">English</span><span class="val">C1</span></li>
+        <li><span class="lbl">Mandarin</span><span class="val">Intermediate</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Core Competencies</h2>
+      <div class="tags">
+        Chief-of-Staff &amp; operations · Program &amp; portfolio management · Cross-border entity &amp; vendor ops · Stakeholder &amp; investor relations · Notion operating-system design · Workflow automation (n8n, APIs) · Hands-on AI implementation · SOP &amp; process standardization
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Tools</h2>
+      <div class="tags">
+        Notion · n8n · Linear · Google Cloud · Stripe / Metronome · Datadog · QGIS / ArcGIS · Python (basic) · LLM APIs (Claude, OpenAI, Gemini)
+      </div>
+    </div>
+
+    <div class="block edu">
+      <h2>Education</h2>
+      <p>
+        <span class="school">UNAM</span><br>
+        <span class="deg">Civil Engineering</span>
+      </p>
+      <p>
+        <span class="school">UNAM Faculty of Engineering</span><br>
+        <span class="deg">Diploma in Management Skills</span>
+      </p>
+      <p>
+        <span class="school">Guangxi Normal University · China</span><br>
+        <span class="deg">Chinese Language Program · 2009–2010</span>
+      </p>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Channel Partner – Semantiks</span>
+          <span class="dates">2026 – present</span>
+        </div>
+        <div class="org">Mexico City / Remote · Venture-backed AI startup (Delaware C-Corp + Mexican subsidiary)</div>
+        <ul>
+          <li>Represent the AI Agents platform and the Professional Services practice (Google Cloud Partner) to my LATAM network: founders, enterprise buyers, and M&amp;A advisories.</li>
+          <li>Source data-engineering and BI opportunities for the professional-services vertical across firms in Mexico and the US.</li>
+          <li>Previously supported operations and cross-border admin during a short transition period (Mar–Apr 2026).</li>
+          <li>Active in the LangChain Mexico community (Semantiks is the official Ambassador); help organize events that connect developers, founders, and enterprise buyers.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Independent Consultant – Operations &amp; Automation</span>
+          <span class="dates">2024 – present</span>
+        </div>
+        <div class="org">NotionOps / Self-employed · Remote</div>
+        <ul>
+          <li>Design and deploy Notion-based operating systems (CRMs, deal pipelines, client dashboards, knowledge bases) for M&amp;A advisories, consultancies, and project-based firms in Mexico and the US.</li>
+          <li>Build n8n workflow automations that remove manual data entry across email, calendar, billing, and project tools; deliver Loom walkthroughs and iterative training so teams become self-sufficient.</li>
+          <li>Selected clients: CenterPoint Business Advisors (M&amp;A, US), Jeff Kibbie, independent consultancies in LATAM.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Consultant – Urban Resilience &amp; Green Infrastructure</span>
+          <span class="dates">2025 – present</span>
+        </div>
+        <div class="org">Sponge City Program (Prof. Kongjian Yu) · Mexico</div>
+        <ul>
+          <li>Develop executive proposals, roadmaps, and stakeholder maps for green-infrastructure initiatives; coordinate municipal partners (Atizapán, Tizapán) and institutional funders (FMCN).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Program Manager – Nature-Based Solutions &amp; Carbon Markets</span>
+          <span class="dates">2021 – 2024</span>
+        </div>
+        <div class="org">Cultivo · Mexico / Remote</div>
+        <ul>
+          <li>Led implementation of regenerative-ranching carbon-credit projects across 250,000+ hectares in northern Mexico, coordinating science, field, finance, and legal workstreams across 10+ ejidos and indigenous communities.</li>
+          <li>Owned Verra (VCS) and Climate Action Reserve (CAR) registration, validation, and verification cycles; prepared technical documentation for third-party auditors (VVBs).</li>
+          <li>Cut third-party verification cost by 30% by redesigning the monitoring framework while maintaining rigorous compliance with certification standards.</li>
+          <li>Managed relationships with international natural-capital investors and corporate offtakers (including Aeroméxico due diligence); supported executive reporting to steering committees.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Project Developer / Project Manager (Solar)</span>
+          <span class="dates">2019 – 2021</span>
+        </div>
+        <div class="org">Mater Energía · Mexico</div>
+        <ul>
+          <li>Managed a 1,550 MW photovoltaic development portfolio across multiple sites with parallel land, regulatory, environmental, and community workstreams.</li>
+          <li>Led negotiations with private and communal landowners (ejidos); ran GIS-based feasibility for new sites and maintained tracking databases for multi-project permitting.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Deputy Administrative Coordinator – International Operations</span>
+          <span class="dates">2018 – 2019</span>
+        </div>
+        <div class="org">Xinhua News Agency 新华通讯社 · Mexico City</div>
+        <ul>
+          <li>Trilingual liaison (Spanish–English–Mandarin) between Beijing HQ and the Mexico bureau; managed logistics, immigration, and admin for international correspondents in a fast-paced cross-cultural environment.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Technical Supervisor – Infrastructure Development</span>
+          <span class="dates">2017 – 2018</span>
+        </div>
+        <div class="org">WSP · Mexico City</div>
+        <ul>
+          <li>Supervised infrastructure projects totaling $50M+ USD; coordinated quality-control activities with contractors and clients.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Personal AI Design &amp; Implementation</h2>
+      <div class="ai-list">
+        <p><strong>Personal RAG over my knowledge base:</strong> custom MCP server with embeddings (MiniLM, 384d) indexing 13,000+ Notion, Drive, and OneDrive documents; daily use for context retrieval.</p>
+        <p><strong>Library of ~70 custom skills / slash-commands</strong> for recurring workflows: email drafting, code review, deep research, day closing, project onboarding.</p>
+        <p><strong>Custom MCP (Model Context Protocol) servers</strong> unifying Notion / Drive / OneDrive search, automating daily logs, and archiving agent work sessions.</p>
+        <p><strong>Multi-agent orchestration with Claude</strong> (Opus / Sonnet) and parallel sub-agents for research, planning, and code delivery; integrated with GitHub, Gmail, Linear, and Slack via MCPs.</p>
+        <p><strong>Automation pipelines (n8n + Apps Script)</strong> across Notion, Gmail, Calendar, and Drive to sync tasks, agendas, billing, and operational logs.</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <h2>Selected Projects &amp; Engagements</h2>
+      <div class="projects-grid">
+        <div class="pair"><span class="key">Cultivo · Aeroméxico</span><span class="desc">Due diligence, impact narrative, and documentation for a corporate offtake deal backed by Verra-registered regenerative-ranching credits.</span></div>
+        <div class="pair"><span class="key">Mater · 1,550 MW Solar</span><span class="desc">Parallel land, permitting, and community workstreams for utility-scale photovoltaic sites across Puebla, Estado de México, and other regions.</span></div>
+        <div class="pair"><span class="key">Sponge City</span><span class="desc">Coordinated with Prof. Kongjian Yu's team, municipal governments, and FMCN on nature-based urban-resilience proposals.</span></div>
+        <div class="pair"><span class="key">CenterPoint (M&amp;A, US)</span><span class="desc">Full Notion-based deal-flow and CRM system; automated email / calendar / drive sync via n8n.</span></div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

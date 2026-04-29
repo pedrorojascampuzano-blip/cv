@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pedro Rojas Campuzano · CV</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
+
+  :root {
+    --ink: #0a0a0a;
+    --grey-1: #444;
+    --grey-2: #777;
+    --grey-3: #b8b8b8;
+    --rule: #d8d8d8;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.4pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+
+  .mono { font-family: "SF Mono", "Menlo", "Roboto Mono", monospace; }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  header .name {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin: 0;
+  }
+  header .role {
+    font-size: 9.6pt;
+    color: var(--grey-1);
+    margin-top: 5px;
+    letter-spacing: 0.2px;
+  }
+  header .meta {
+    text-align: right;
+    font-size: 8.6pt;
+    color: var(--grey-1);
+    line-height: 1.55;
+    white-space: nowrap;
+  }
+  header .meta a { color: var(--grey-1); text-decoration: none; }
+
+  /* SUMMARY */
+  .summary {
+    font-size: 9.4pt;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    color: var(--ink);
+    text-align: justify;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    gap: 24px;
+  }
+
+  /* SECTION HEADER (// EDITORIAL) */
+  h2 {
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  h2::before {
+    content: "// ";
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  section { margin-bottom: 16px; page-break-inside: auto; }
+  section:last-child { margin-bottom: 0; }
+
+  /* SIDEBAR */
+  aside .block { margin-bottom: 16px; }
+  aside .block:last-child { margin-bottom: 0; }
+
+  aside ul { list-style: none; padding: 0; margin: 0; font-size: 8.9pt; line-height: 1.7; }
+  aside ul li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+  aside ul li .lbl { color: var(--grey-1); }
+  aside ul li .val { color: var(--ink); text-align: right; }
+
+  aside .tags {
+    font-size: 8.9pt;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  aside .edu p {
+    margin: 0 0 9px 0;
+    font-size: 8.9pt;
+    line-height: 1.5;
+  }
+  aside .edu .school { font-weight: 600; }
+  aside .edu .deg { color: var(--grey-1); }
+
+  /* MAIN: EXPERIENCE */
+  .job {
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .job .row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .job .title {
+    font-size: 9.6pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .job .dates {
+    font-size: 8.4pt;
+    color: var(--grey-2);
+    font-family: "SF Mono", "Menlo", monospace;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+  }
+  .job .org {
+    font-size: 8.9pt;
+    color: var(--grey-1);
+    margin-bottom: 6px;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .job ul li {
+    padding-left: 11px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .job ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+  }
+
+  /* PROJECTS */
+  .projects-section { page-break-inside: avoid; break-inside: avoid; }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+  .pair {
+    font-size: 8.9pt;
+    line-height: 1.48;
+    padding-left: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pair .key { font-weight: 600; display: block; }
+  .pair .sep { display: none; }
+  .pair .desc { color: var(--grey-1); }
+
+  .ai-list { font-size: 9pt; line-height: 1.5; }
+  .ai-list p {
+    margin: 0 0 5px 0;
+    padding-left: 11px;
+    position: relative;
+  }
+  .ai-list p::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--grey-2);
+  }
+  .ai-list strong { font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 class="name">Pedro Rojas Campuzano</h1>
+    <div class="role">Chief of Staff · Operaciones &amp; Sistemas · Implementación de IA</div>
+  </div>
+  <div class="meta">
+    Ciudad de México, MX<br>
+    +52 55 9186 1118<br>
+    pedro.rojas.campuzano@gmail.com<br>
+    linkedin.com/in/pedro-rojas-campuzano
+  </div>
+</header>
+
+<div class="summary">
+Operador y project manager con más de 7 años gestionando programas complejos con múltiples stakeholders: desde portafolios solares de 1,550 MW y proyectos de créditos de carbono en más de 250,000 hectáreas, hasta operaciones cross-border para una startup de IA respaldada por venture capital. Ingeniero civil de formación, pensador sistémico de práctica; diseño y mantengo sistemas personales de IA (RAG local, librerías de agentes custom, servidores MCP, pipelines de automatización) que uso a diario. Trilingüe: español nativo, inglés profesional, mandarín intermedio.
+</div>
+
+<div class="grid">
+
+  <aside>
+
+    <div class="block">
+      <h2>Idiomas</h2>
+      <ul>
+        <li><span class="lbl">Español</span><span class="val">Nativo</span></li>
+        <li><span class="lbl">Inglés</span><span class="val">C1</span></li>
+        <li><span class="lbl">Mandarín</span><span class="val">Intermedio</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Competencias clave</h2>
+      <div class="tags">
+        Chief of Staff &amp; operaciones · Gestión de programas y portafolios · Operaciones cross-border y proveedores · Relación con inversionistas y stakeholders · Diseño de sistemas operativos en Notion · Automatización de procesos (n8n, APIs) · Implementación práctica de IA · Estandarización de SOPs
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Herramientas</h2>
+      <div class="tags">
+        Notion · n8n · Linear · Google Cloud · Stripe / Metronome · Datadog · QGIS / ArcGIS · Python (básico) · APIs de LLMs (Claude, OpenAI, Gemini)
+      </div>
+    </div>
+
+    <div class="block edu">
+      <h2>Educación</h2>
+      <p>
+        <span class="school">UNAM</span><br>
+        <span class="deg">Ingeniería Civil</span>
+      </p>
+      <p>
+        <span class="school">Facultad de Ingeniería, UNAM</span><br>
+        <span class="deg">Diplomado en Habilidades Directivas</span>
+      </p>
+      <p>
+        <span class="school">Guangxi Normal University · China</span><br>
+        <span class="deg">Programa de Lengua China · 2009–2010</span>
+      </p>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <section>
+      <h2>Experiencia</h2>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Canal de Venta – Semantiks</span>
+          <span class="dates">2026 – presente</span>
+        </div>
+        <div class="org">Ciudad de México / Remoto · Startup de IA respaldada por VC (C-Corp Delaware + subsidiaria MX)</div>
+        <ul>
+          <li>Represento la plataforma de Agentes de IA y la práctica de Professional Services (Google Cloud Partner) ante mi red en LATAM: founders, compradores enterprise y M&amp;A advisories.</li>
+          <li>Conecto oportunidades de ingeniería de datos y BI con la vertical de servicios profesionales para empresas en México y EE.UU.</li>
+          <li>Apoyé brevemente en operaciones y administración cross-border durante el periodo de transición (Mar–Abr 2026).</li>
+          <li>Activo en la comunidad LangChain México (Semantiks como Embajador oficial); colaboro en eventos que conectan founders, desarrolladores y compradores enterprise.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Consultor Independiente – Operaciones &amp; Automatización</span>
+          <span class="dates">2024 – presente</span>
+        </div>
+        <div class="org">NotionOps / Independiente · Remoto</div>
+        <ul>
+          <li>Diseño e implemento sistemas operativos basados en Notion (CRMs, pipelines de deals, dashboards, knowledge bases) para firmas de M&amp;A, consultorías y empresas basadas en proyectos en México y EE.UU.</li>
+          <li>Construyo automatizaciones en n8n que eliminan entrada manual de datos entre correo, calendario, facturación y herramientas de proyecto; entrego tutoriales en Loom para que los equipos se vuelvan autosuficientes.</li>
+          <li>Clientes seleccionados: CenterPoint Business Advisors (M&amp;A, EE.UU.), Jeff Kibbie, consultorías independientes en LATAM.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Consultor – Resiliencia Urbana e Infraestructura Verde</span>
+          <span class="dates">2025 – presente</span>
+        </div>
+        <div class="org">Programa Ciudad Esponja (Prof. Kongjian Yu) · México</div>
+        <ul>
+          <li>Desarrollo propuestas ejecutivas, hojas de ruta y mapas de stakeholders para iniciativas de infraestructura verde; coordino con gobiernos municipales (Atizapán, Tizapán) y fondos institucionales (FMCN).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Program Manager – Soluciones Basadas en Naturaleza y Mercados de Carbono</span>
+          <span class="dates">2021 – 2024</span>
+        </div>
+        <div class="org">Cultivo · México / Remoto</div>
+        <ul>
+          <li>Lideré la implementación de proyectos de créditos de carbono en ganadería regenerativa en más de 250,000 hectáreas en el norte de México, coordinando equipos de ciencia, campo, finanzas y legal con más de 10 ejidos y comunidades indígenas.</li>
+          <li>Gestioné el proceso completo de registro, validación y verificación ante Verra (VCS) y Climate Action Reserve (CAR), incluyendo documentación técnica para auditores externos (VVBs).</li>
+          <li>Reduje en 30% el costo de verificación externa rediseñando el marco de monitoreo, manteniendo cumplimiento riguroso con los estándares de certificación.</li>
+          <li>Gestioné relaciones con inversionistas internacionales de capital natural y compradores corporativos (incluyendo due diligence con Aeroméxico); reporté a steering committees ejecutivos.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Project Developer / Project Manager (Solar)</span>
+          <span class="dates">2019 – 2021</span>
+        </div>
+        <div class="org">Mater Energía · México</div>
+        <ul>
+          <li>Gestioné un portafolio fotovoltaico de 1,550 MW en múltiples sitios con workstreams paralelos de tierra, regulación, medio ambiente y comunidad.</li>
+          <li>Lideré negociaciones con propietarios privados y comunales (ejidos); ejecuté análisis de factibilidad GIS para nuevos sitios y mantuve bases de datos de seguimiento de permisos multi-proyecto.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Coordinador Administrativo Adjunto – Operaciones Internacionales</span>
+          <span class="dates">2018 – 2019</span>
+        </div>
+        <div class="org">Xinhua News Agency 新华通讯社 · Ciudad de México</div>
+        <ul>
+          <li>Enlace trilingüe (español–inglés–mandarín) entre la sede en Beijing y la oficina en México; gestioné logística, migración y administración para corresponsales internacionales en un entorno cross-cultural de alta exigencia.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">Supervisor Técnico – Desarrollo de Infraestructura</span>
+          <span class="dates">2017 – 2018</span>
+        </div>
+        <div class="org">WSP · Ciudad de México</div>
+        <ul>
+          <li>Supervisé proyectos de infraestructura por más de $50M USD; coordiné actividades de control de calidad con contratistas y clientes.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Diseño e Implementación de IA (Personal)</h2>
+      <div class="ai-list">
+        <p><strong>RAG personal sobre mi base de conocimiento:</strong> servidor MCP custom con embeddings (MiniLM, 384d) que indexa 13,000+ documentos de Notion, Drive y OneDrive; uso diario para recuperación de contexto.</p>
+        <p><strong>~70 skills / slash-commands personalizados</strong> para flujos recurrentes: drafting de correo, code review, investigación profunda, cierre de día, onboarding.</p>
+        <p><strong>Servidores MCP custom</strong> para unificar búsqueda en Notion / Drive / OneDrive, automatizar la bitácora diaria y archivar sesiones de trabajo con agentes.</p>
+        <p><strong>Orquestación multi-agente con Claude</strong> (Opus / Sonnet) y sub-agentes en paralelo para investigación, planeación y delivery de código; integración con GitHub, Gmail, Linear y Slack vía MCPs.</p>
+        <p><strong>Pipelines de automatización con n8n y Apps Script</strong> entre Notion, Gmail, Calendario y Drive para sincronizar tareas, agendas, facturación y bitácoras.</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <h2>Proyectos &amp; Engagements seleccionados</h2>
+      <div class="projects-grid">
+        <div class="pair"><span class="key">Cultivo · Aeroméxico</span><span class="desc">Due diligence, narrativa de impacto y documentación para offtake corporativo con créditos de ganadería regenerativa Verra.</span></div>
+        <div class="pair"><span class="key">Mater · Solar 1,550 MW</span><span class="desc">Workstreams paralelos de tierra, permisos y comunidad para sitios fotovoltaicos utility-scale en Puebla, Estado de México y otras regiones.</span></div>
+        <div class="pair"><span class="key">Ciudad Esponja</span><span class="desc">Coordinación con el equipo del Prof. Kongjian Yu, gobiernos municipales y FMCN en propuestas de resiliencia urbana basadas en naturaleza.</span></div>
+        <div class="pair"><span class="key">CenterPoint (M&amp;A, EE.UU.)</span><span class="desc">Sistema completo de deal flow y CRM en Notion; sincronía de correo, calendario y Drive automatizada con n8n.</span></div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

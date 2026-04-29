@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Rojas Campuzano · CV</title>
+<meta name="description" content="Curriculum Vitae · Pedro Rojas Campuzano">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --grey-1: #444;
+    --grey-2: #888;
+    --grey-3: #ccc;
+    --rule: #1a1a1a;
+    --bg: #fafafa;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 60px 32px;
+  }
+
+  .header {
+    border-top: 2px solid var(--rule);
+    padding-top: 18px;
+    margin-bottom: 56px;
+  }
+
+  .name {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+    margin: 0 0 14px 0;
+  }
+
+  .tag {
+    font-size: 14px;
+    color: var(--grey-1);
+    line-height: 1.5;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  .section-label {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--grey-2);
+    margin: 0 0 18px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--grey-3);
+  }
+
+  .section-label::before {
+    content: "// ";
+    color: var(--grey-3);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    border: 1px solid var(--rule);
+    background: #fff;
+    padding: 24px 22px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s ease, transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .card:hover {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .card:hover .card-meta { color: rgba(255,255,255,0.6); }
+  .card:hover .card-arrow { transform: translateX(4px); }
+
+  .card-lang {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.6;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .card-meta {
+    font-size: 12px;
+    color: var(--grey-1);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .card-foot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 10px;
+  }
+
+  .card-action {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .card-arrow {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 14px;
+    transition: transform 0.15s ease;
+  }
+
+  .downloads {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .dl {
+    font-size: 13px;
+    color: var(--grey-1);
+    text-decoration: none;
+    border-bottom: 1px solid var(--grey-3);
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .dl:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .dl::before {
+    content: "↓ ";
+    color: var(--grey-2);
+  }
+
+  .contact {
+    border-top: 1px solid var(--grey-3);
+    padding-top: 24px;
+    font-size: 13px;
+    color: var(--grey-1);
+    line-height: 1.7;
+  }
+
+  .contact a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--grey-3);
+    transition: border-color 0.15s ease;
+  }
+
+  .contact a:hover { border-color: var(--ink); }
+
+  .contact .row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 48px 22px 40px 22px; }
+    .grid { grid-template-columns: 1fr; }
+    .header { margin-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="header">
+    <h1 class="name">Pedro Rojas<br>Campuzano</h1>
+    <p class="tag">Operador y consultor en intersección de operaciones, infraestructura y sistemas de IA. Ciudad de México.</p>
+  </header>
+
+  <p class="section-label">Curriculum Vitae</p>
+
+  <div class="grid">
+    <a class="card" href="es.html">
+      <span class="card-lang">Español</span>
+      <h2 class="card-title">CV en Español</h2>
+      <p class="card-meta">Versión completa · 2 páginas · actualizada abril 2026</p>
+      <div class="card-foot">
+        <span class="card-action">Ver</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="card" href="en.html">
+      <span class="card-lang">English</span>
+      <h2 class="card-title">CV in English</h2>
+      <p class="card-meta">Full version · 2 pages · updated April 2026</p>
+      <div class="card-foot">
+        <span class="card-action">View</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="section-label">Descargar PDF / Download</p>
+
+  <div class="downloads">
+    <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download>Pedro_Rojas_CV_ES.pdf</a>
+    <a class="dl" href="Pedro_Rojas_CV_EN.pdf" download>Pedro_Rojas_CV_EN.pdf</a>
+  </div>
+
+  <p class="section-label">Contacto</p>
+
+  <div class="contact">
+    <div class="row">
+      <span><a href="mailto:pedroc11@gmail.com">pedroc11@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/pedrorojascampuzano/" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span><a href="https://github.com/pedrorojascampuzano-blip" target="_blank" rel="noopener">GitHub</a></span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
