@@ -73,7 +73,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 14px;
     margin-bottom: 40px;
   }
@@ -189,10 +189,19 @@
     flex-wrap: wrap;
   }
 
+  @media (max-width: 820px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+
   @media (max-width: 560px) {
     .wrap { padding: 48px 22px 40px 22px; }
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; gap: 12px; }
     .header { margin-bottom: 40px; }
+    .name { font-size: clamp(36px, 11vw, 56px); }
+    .card { padding: 20px 18px; gap: 10px; }
+    .card-title { font-size: 19px; }
+    .downloads { flex-direction: column; gap: 12px; }
+    .contact .row { flex-direction: column; gap: 6px; }
   }
 </style>
 </head>
@@ -227,13 +236,24 @@
         <span class="card-arrow">→</span>
       </div>
     </a>
+
+    <a class="card" href="zh.html">
+      <span class="card-lang">中文</span>
+      <h2 class="card-title">中文简历</h2>
+      <p class="card-meta">完整版 · 2 页 · 2026 年 4 月更新</p>
+      <div class="card-foot">
+        <span class="card-action">查看</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
   </div>
 
-  <p class="section-label">Descargar PDF / Download</p>
+  <p class="section-label">Descargar PDF / Download / 下载</p>
 
   <div class="downloads">
     <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download>Pedro_Rojas_CV_ES.pdf</a>
     <a class="dl" href="Pedro_Rojas_CV_EN.pdf" download>Pedro_Rojas_CV_EN.pdf</a>
+    <a class="dl" href="Pedro_Rojas_CV_ZH.pdf" download>Pedro_Rojas_CV_ZH.pdf</a>
   </div>
 
   <p class="section-label">Contacto</p>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Pedro Rojas Campuzano · 简历</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
+
+  :root {
+    --ink: #0a0a0a;
+    --grey-1: #444;
+    --grey-2: #777;
+    --grey-3: #b8b8b8;
+    --rule: #d8d8d8;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", BlinkMacSystemFont, "Helvetica Neue", "Inter", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.6pt;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+
+  .mono { font-family: "SF Mono", "Menlo", "Roboto Mono", monospace; }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  header .name {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin: 0;
+  }
+  header .role {
+    font-size: 9.8pt;
+    color: var(--grey-1);
+    margin-top: 5px;
+    letter-spacing: 0.2px;
+  }
+  header .meta {
+    text-align: right;
+    font-size: 8.8pt;
+    color: var(--grey-1);
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+  header .meta a { color: var(--grey-1); text-decoration: none; }
+
+  /* SUMMARY */
+  .summary {
+    font-size: 9.6pt;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: var(--ink);
+    text-align: justify;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    gap: 24px;
+  }
+
+  /* SECTION HEADER (// EDITORIAL) */
+  h2 {
+    font-size: 8.4pt;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  h2::before {
+    content: "// ";
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  section { margin-bottom: 16px; page-break-inside: auto; }
+  section:last-child { margin-bottom: 0; }
+
+  /* SIDEBAR */
+  aside .block { margin-bottom: 16px; }
+  aside .block:last-child { margin-bottom: 0; }
+
+  aside ul { list-style: none; padding: 0; margin: 0; font-size: 9.1pt; line-height: 1.75; }
+  aside ul li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+  aside ul li .lbl { color: var(--grey-1); }
+  aside ul li .val { color: var(--ink); text-align: right; }
+
+  aside .tags {
+    font-size: 9.1pt;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  aside .edu p {
+    margin: 0 0 9px 0;
+    font-size: 9.1pt;
+    line-height: 1.55;
+  }
+  aside .edu .school { font-weight: 600; }
+  aside .edu .deg { color: var(--grey-1); }
+
+  /* MAIN: EXPERIENCE */
+  .job {
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .job .row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .job .title {
+    font-size: 9.8pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .job .dates {
+    font-size: 8.4pt;
+    color: var(--grey-2);
+    font-family: "SF Mono", "Menlo", monospace;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+  }
+  .job .org {
+    font-size: 9.1pt;
+    color: var(--grey-1);
+    margin-bottom: 6px;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9.2pt;
+    line-height: 1.65;
+  }
+  .job ul li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .job ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+  }
+
+  /* PROJECTS */
+  .projects-section { page-break-inside: avoid; break-inside: avoid; }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+  .pair {
+    font-size: 9pt;
+    line-height: 1.6;
+    padding-left: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pair .key { font-weight: 600; display: block; }
+  .pair .desc { color: var(--grey-1); }
+
+  .ai-list { font-size: 9.2pt; line-height: 1.65; }
+  .ai-list p {
+    margin: 0 0 5px 0;
+    padding-left: 12px;
+    position: relative;
+  }
+  .ai-list p::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--grey-2);
+  }
+  .ai-list strong { font-weight: 600; }
+
+  /* SCREEN-ONLY: page wrapper for browser viewing */
+  @media screen {
+    html { background: #ececec; }
+    body {
+      max-width: 920px;
+      margin: 40px auto;
+      padding: 56px 64px;
+      background: #fff;
+      box-shadow: 0 2px 28px rgba(0, 0, 0, 0.08);
+      font-size: 11.2pt;
+    }
+  }
+
+  /* TABLET */
+  @media screen and (max-width: 760px) {
+    body {
+      margin: 0 auto;
+      padding: 40px 36px;
+      box-shadow: none;
+      font-size: 11pt;
+    }
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 560px) {
+    body { padding: 28px 20px; font-size: 10.8pt; }
+
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    header .name { font-size: 22pt; line-height: 1.05; }
+    header .role { font-size: 10pt; }
+    header .meta {
+      text-align: left;
+      white-space: normal;
+      font-size: 9.6pt;
+      line-height: 1.65;
+    }
+
+    .summary { font-size: 10.4pt; line-height: 1.7; text-align: left; }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    aside ul { font-size: 10.2pt; }
+    aside .tags { font-size: 10.2pt; line-height: 1.7; }
+    aside .edu p { font-size: 10.2pt; }
+
+    h2 {
+      font-size: 9.2pt;
+      letter-spacing: 0.8px;
+      padding-bottom: 6px;
+    }
+
+    .job .row1 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+    .job .title { font-size: 11pt; }
+    .job .dates { font-size: 9.4pt; }
+    .job .org { font-size: 9.8pt; }
+    .job ul { font-size: 10.2pt; line-height: 1.65; }
+
+    .ai-list { font-size: 10.2pt; line-height: 1.7; }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .pair { font-size: 10.2pt; line-height: 1.65; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 class="name">Pedro Rojas Campuzano</h1>
+    <div class="role">运营负责人 · 系统设计 · AI 落地实施</div>
+  </div>
+  <div class="meta">
+    墨西哥 · 墨西哥城<br>
+    +52 55 9186 1118<br>
+    pedro.rojas.campuzano@gmail.com<br>
+    linkedin.com/in/pedro-rojas-campuzano
+  </div>
+</header>
+
+<div class="summary">
+拥有 7 年以上跨多方利益相关者的复杂项目管理经验：从 1,550 MW 太阳能项目组合、覆盖 25 万公顷以上的碳信用项目，到为风险投资支持的 AI 初创企业管理跨境运营。土木工程师出身，系统化思维践行者；自主设计并维护用于日常工作的个人 AI 系统（本地 RAG、定制 Agent 库、MCP 服务器、自动化流水线）。三语者：西班牙语母语，英语职业级（C1），中文中级。
+</div>
+
+<div class="grid">
+
+  <aside>
+
+    <div class="block">
+      <h2>语言能力</h2>
+      <ul>
+        <li><span class="lbl">西班牙语</span><span class="val">母语</span></li>
+        <li><span class="lbl">英语</span><span class="val">C1</span></li>
+        <li><span class="lbl">中文</span><span class="val">中级</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>核心能力</h2>
+      <div class="tags">
+        运营负责人 / Chief of Staff · 项目与组合管理 · 跨境运营与供应商管理 · 投资人与利益相关方关系 · Notion 操作系统设计 · 流程自动化（n8n、API）· AI 实践落地 · SOP 标准化
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>工具</h2>
+      <div class="tags">
+        Notion · n8n · Linear · Google Cloud · Stripe / Metronome · Datadog · QGIS / ArcGIS · Python（基础）· LLM API（Claude、OpenAI、Gemini）
+      </div>
+    </div>
+
+    <div class="block edu">
+      <h2>教育背景</h2>
+      <p>
+        <span class="school">墨西哥国立自治大学（UNAM）</span><br>
+        <span class="deg">土木工程</span>
+      </p>
+      <p>
+        <span class="school">UNAM 工程学院</span><br>
+        <span class="deg">管理能力进修课程</span>
+      </p>
+      <p>
+        <span class="school">广西师范大学 · 中国</span><br>
+        <span class="deg">汉语进修项目 · 2009–2010</span>
+      </p>
+    </div>
+
+  </aside>
+
+  <main>
+
+    <section>
+      <h2>工作经历</h2>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">销售渠道合作 – Semantiks</span>
+          <span class="dates">2026 – 至今</span>
+        </div>
+        <div class="org">墨西哥城 / 远程 · 风投支持的 AI 初创企业（特拉华 C-Corp + 墨西哥子公司）</div>
+        <ul>
+          <li>在拉美地区代理 Semantiks 的 AI Agent 平台与专业服务（Google Cloud 合作伙伴），对接创始人、企业客户与并购顾问机构。</li>
+          <li>将数据工程与 BI 机会与专业服务团队连接，服务于墨西哥与美国的客户。</li>
+          <li>过渡期（2026 年 3–4 月）短期协助跨境运营与行政事务。</li>
+          <li>活跃于 LangChain 墨西哥社区（Semantiks 担任官方大使）；参与连接创始人、开发者与企业客户的活动。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">独立顾问 – 运营与自动化</span>
+          <span class="dates">2024 – 至今</span>
+        </div>
+        <div class="org">NotionOps / 独立 · 远程</div>
+        <ul>
+          <li>为墨西哥与美国的并购公司、咨询机构与项目制企业，设计并实施基于 Notion 的运营系统（CRM、交易管线、仪表盘、知识库）。</li>
+          <li>使用 n8n 构建自动化，消除邮件、日历、发票与项目工具之间的人工录入；通过 Loom 教程使团队具备自主运营能力。</li>
+          <li>代表客户：CenterPoint Business Advisors（美国并购顾问）、Jeff Kibbie、拉美独立咨询公司。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">顾问 – 城市韧性与绿色基础设施</span>
+          <span class="dates">2025 – 至今</span>
+        </div>
+        <div class="org">海绵城市项目（俞孔坚教授团队）· 墨西哥</div>
+        <ul>
+          <li>为绿色基础设施倡议起草执行方案、路线图与利益相关方地图；与市政府（Atizapán、Tizapán）及机构资金方（FMCN）协同推进。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">项目经理 – 自然解决方案与碳市场</span>
+          <span class="dates">2021 – 2024</span>
+        </div>
+        <div class="org">Cultivo · 墨西哥 / 远程</div>
+        <ul>
+          <li>在墨西哥北部 25 万公顷以上的再生牧业项目中主导碳信用落地，统筹科研、田间、财务与法务团队，与 10 余个 ejido 集体土地及原住民社区协作。</li>
+          <li>全面管理 Verra（VCS）与 Climate Action Reserve（CAR）的注册、验证与核证流程，包括为外部审计机构（VVB）准备技术文件。</li>
+          <li>通过重新设计监测框架，将外部核证成本降低 30%，同时严格保持认证标准合规。</li>
+          <li>管理与国际自然资本投资人及企业买方的关系（含与墨西哥航空的尽职调查）；向执行指导委员会汇报。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">项目开发 / 项目经理（太阳能）</span>
+          <span class="dates">2019 – 2021</span>
+        </div>
+        <div class="org">Mater Energía · 墨西哥</div>
+        <ul>
+          <li>管理 1,550 MW 多场地光伏项目组合，并行推进土地、监管、环境与社区工作流。</li>
+          <li>主导与私有及集体（ejido）业主的谈判；为新场地执行 GIS 可行性分析，并维护多项目许可追踪数据库。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">副行政协调员 – 国际运营</span>
+          <span class="dates">2018 – 2019</span>
+        </div>
+        <div class="org">新华通讯社 · 墨西哥城</div>
+        <ul>
+          <li>三语联络人（西班牙语–英语–中文），连接北京总部与墨西哥分社；在高强度跨文化环境中负责国际记者的后勤、移民与行政事务。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="row1">
+          <span class="title">技术主管 – 基础设施开发</span>
+          <span class="dates">2017 – 2018</span>
+        </div>
+        <div class="org">WSP · 墨西哥城</div>
+        <ul>
+          <li>监督超过 5,000 万美元的基础设施项目；与承包商及客户协调质量控制工作。</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>个人 AI 设计与落地</h2>
+      <div class="ai-list">
+        <p><strong>个人知识库 RAG：</strong>定制 MCP 服务器结合嵌入向量（MiniLM, 384 维），索引 13,000+ Notion、Drive 与 OneDrive 文档；每日用于上下文检索。</p>
+        <p><strong>~70 个定制 skill / slash-command：</strong>覆盖日常重复工作流：邮件起草、代码审查、深度调研、日终总结、项目入门。</p>
+        <p><strong>定制 MCP 服务器：</strong>统一 Notion / Drive / OneDrive 搜索，自动生成日志，归档 Agent 工作会话。</p>
+        <p><strong>多 Agent 编排（Claude Opus / Sonnet）：</strong>并行子 Agent 用于调研、规划与代码交付；通过 MCP 集成 GitHub、Gmail、Linear 与 Slack。</p>
+        <p><strong>n8n 与 Apps Script 自动化流水线：</strong>在 Notion、Gmail、日历与 Drive 之间同步任务、议程、发票与日志。</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <h2>精选项目与合作</h2>
+      <div class="projects-grid">
+        <div class="pair"><span class="key">Cultivo · 墨西哥航空（Aeroméxico）</span><span class="desc">尽职调查、影响叙事与企业级碳信用承购的文件准备（基于 Verra 注册的再生牧业信用）。</span></div>
+        <div class="pair"><span class="key">Mater · 1,550 MW 太阳能</span><span class="desc">在普埃布拉、墨西哥州及其他地区，多场地公用事业级光伏项目的土地、许可与社区并行工作流。</span></div>
+        <div class="pair"><span class="key">海绵城市</span><span class="desc">与俞孔坚教授团队、市政府与 FMCN 协调，形成基于自然的城市韧性提案。</span></div>
+        <div class="pair"><span class="key">CenterPoint（美国并购）</span><span class="desc">完整的 Notion 交易流与 CRM 系统；通过 n8n 自动同步邮件、日历与 Drive。</span></div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

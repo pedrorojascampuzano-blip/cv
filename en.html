@@ -6,27 +6,6 @@
 <style>
   @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
 
-  @media screen {
-    html { background: #ececec; }
-    body {
-      max-width: 920px;
-      margin: 40px auto;
-      padding: 60px 68px;
-      background: #fff;
-      box-shadow: 0 2px 28px rgba(0, 0, 0, 0.08);
-      font-size: 11pt;
-    }
-  }
-
-  @media screen and (max-width: 720px) {
-    body {
-      margin: 0;
-      padding: 32px 24px;
-      box-shadow: none;
-      font-size: 10.5pt;
-    }
-  }
-
   :root {
     --ink: #0a0a0a;
     --grey-1: #444;
@@ -214,6 +193,85 @@
     color: var(--grey-2);
   }
   .ai-list strong { font-weight: 600; }
+
+  /* SCREEN-ONLY: page wrapper for browser viewing */
+  @media screen {
+    html { background: #ececec; }
+    body {
+      max-width: 920px;
+      margin: 40px auto;
+      padding: 56px 64px;
+      background: #fff;
+      box-shadow: 0 2px 28px rgba(0, 0, 0, 0.08);
+      font-size: 11pt;
+    }
+  }
+
+  /* TABLET */
+  @media screen and (max-width: 760px) {
+    body {
+      margin: 0 auto;
+      padding: 40px 36px;
+      box-shadow: none;
+      font-size: 10.8pt;
+    }
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 560px) {
+    body { padding: 28px 20px; font-size: 10.5pt; }
+
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    header .name { font-size: 22pt; line-height: 1.05; }
+    header .role { font-size: 10pt; }
+    header .meta {
+      text-align: left;
+      white-space: normal;
+      font-size: 9.4pt;
+      line-height: 1.6;
+    }
+
+    .summary { font-size: 10pt; line-height: 1.55; text-align: left; }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    aside ul { font-size: 10pt; }
+    aside .tags { font-size: 10pt; line-height: 1.6; }
+    aside .edu p { font-size: 10pt; }
+
+    h2 {
+      font-size: 9pt;
+      letter-spacing: 1.4px;
+      padding-bottom: 6px;
+    }
+
+    .job .row1 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+    .job .title { font-size: 11pt; }
+    .job .dates { font-size: 9.4pt; }
+    .job .org { font-size: 9.6pt; }
+    .job ul { font-size: 10pt; line-height: 1.55; }
+
+    .ai-list { font-size: 10pt; line-height: 1.6; }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .pair { font-size: 10pt; line-height: 1.55; }
+  }
 
 </style>
 </head>
