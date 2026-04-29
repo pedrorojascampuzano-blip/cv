@@ -12,6 +12,8 @@
     --grey-2: #777;
     --grey-3: #b8b8b8;
     --rule: #d8d8d8;
+    --accent: #2d4a3e;
+    --accent-soft: #93a89b;
   }
 
   * { box-sizing: border-box; }
@@ -88,7 +90,7 @@
   }
   h2::before {
     content: "// ";
-    color: var(--grey-3);
+    color: var(--accent);
     font-family: "SF Mono", "Menlo", monospace;
     font-weight: 500;
     letter-spacing: 0;
@@ -135,7 +137,7 @@
   .job .title {
     font-size: 10.6pt;
     font-weight: 700;
-    color: var(--ink);
+    color: var(--accent);
     letter-spacing: -0.1px;
     line-height: 1.25;
   }
@@ -168,7 +170,7 @@
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--grey-3);
+    color: var(--accent-soft);
     font-family: "SF Mono", "Menlo", monospace;
   }
 
@@ -200,7 +202,7 @@
     content: "▸";
     position: absolute;
     left: 0;
-    color: var(--grey-2);
+    color: var(--accent-soft);
   }
   .ai-list strong { font-weight: 600; }
 
