@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pedro Rojas Campuzano · CV</title>
-<meta name="description" content="Curriculum Vitae · Pedro Rojas Campuzano">
+<meta name="description" content="Curriculum Vitae · Pedro Rojas Campuzano · Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<link rel="canonical" href="https://pedrorojascampuzano-blip.github.io/cv/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='52%25' fill='%23fff' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='40' font-weight='700' text-anchor='middle' dominant-baseline='middle'%3EP%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Pedro Rojas Campuzano · CV">
+<meta property="og:description" content="Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://pedrorojascampuzano-blip.github.io/cv/">
+<meta name="twitter:card" content="summary">
 <style>
   :root {
     --ink: #0a0a0a;
@@ -28,6 +35,7 @@
   }
 
   .wrap {
+    width: 100%;
     max-width: 720px;
     margin: 0 auto;
     padding: 80px 32px 60px 32px;
@@ -79,12 +87,13 @@
   }
 
   .card {
+    position: relative;
     border: 1px solid var(--rule);
     background: #fff;
-    padding: 24px 22px;
+    padding: 24px 22px 50px 22px;
     text-decoration: none;
     color: var(--ink);
-    transition: background 0.15s ease, transform 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -95,7 +104,7 @@
     color: #fff;
   }
 
-  .card:hover .card-meta { color: rgba(255,255,255,0.6); }
+  .card:hover .card-meta { color: rgba(255,255,255,0.78); }
   .card:hover .card-arrow { transform: translateX(4px); }
 
   .card-lang {
@@ -121,22 +130,12 @@
     margin: 0;
   }
 
-  .card-foot {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-top: 10px;
-  }
-
-  .card-action {
-    font-size: 13px;
-    font-weight: 500;
-  }
-
   .card-arrow {
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
     font-family: "SF Mono", "Menlo", monospace;
-    font-size: 14px;
+    font-size: 16px;
     transition: transform 0.15s ease;
   }
 
@@ -166,6 +165,12 @@
     color: var(--grey-2);
   }
 
+  .dl small {
+    font-size: 11px;
+    color: var(--grey-2);
+    font-variant-numeric: tabular-nums;
+  }
+
   .contact {
     border-top: 1px solid var(--grey-3);
     padding-top: 24px;
@@ -189,19 +194,65 @@
     flex-wrap: wrap;
   }
 
+  .footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--grey-3);
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--grey-2);
+  }
+
+  .footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--grey-3);
+  }
+
+  .footer a:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* A11Y */
+  a:focus-visible,
+  .card:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
   @media (max-width: 820px) {
     .grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 560px) {
-    .wrap { padding: 48px 22px 40px 22px; }
+    html, body { overflow-x: hidden; }
+    .wrap { padding: 48px 20px 40px 20px; }
     .grid { grid-template-columns: 1fr; gap: 12px; }
     .header { margin-bottom: 40px; }
-    .name { font-size: clamp(36px, 11vw, 56px); }
-    .card { padding: 20px 18px; gap: 10px; }
+    .name {
+      font-size: clamp(32px, 9vw, 48px);
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .card { padding: 20px 18px 46px 18px; gap: 10px; }
+    .card-arrow { bottom: 16px; right: 18px; }
     .card-title { font-size: 19px; }
-    .downloads { flex-direction: column; gap: 12px; }
-    .contact .row { flex-direction: column; gap: 6px; }
+    .downloads { flex-direction: column; gap: 4px; }
+    .dl {
+      display: inline-block;
+      padding: 12px 0;
+      min-height: 44px;
+      word-break: break-word;
+    }
+    .contact { padding-top: 20px; }
+    .contact .row { flex-direction: column; gap: 0; }
+    .contact a {
+      display: inline-block;
+      padding: 10px 0;
+      min-height: 44px;
+      line-height: 1.5;
+    }
+    .footer { font-size: 10px; }
   }
 </style>
 </head>
@@ -210,50 +261,41 @@
 <div class="wrap">
 
   <header class="header">
-    <h1 class="name">Pedro Rojas<br>Campuzano</h1>
+    <h1 class="name">Pedro Rojas Campuzano</h1>
     <p class="tag">Operador y consultor en intersección de operaciones, infraestructura y sistemas de IA. Ciudad de México.</p>
   </header>
 
   <p class="section-label">Curriculum Vitae</p>
 
   <div class="grid">
-    <a class="card" href="es.html">
+    <a class="card" href="es.html" hreflang="es">
       <span class="card-lang">Español</span>
       <h2 class="card-title">CV en Español</h2>
-      <p class="card-meta">Versión completa · 2 páginas · actualizada abril 2026</p>
-      <div class="card-foot">
-        <span class="card-action">Ver</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <p class="card-meta">Versión completa · 2 páginas · actualizada mayo 2026</p>
+      <span class="card-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a class="card" href="en.html">
+    <a class="card" href="en.html" hreflang="en">
       <span class="card-lang">English</span>
       <h2 class="card-title">CV in English</h2>
-      <p class="card-meta">Full version · 2 pages · updated April 2026</p>
-      <div class="card-foot">
-        <span class="card-action">View</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <p class="card-meta">Full version · 2 pages · updated May 2026</p>
+      <span class="card-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a class="card" href="zh.html">
+    <a class="card" href="zh.html" hreflang="zh">
       <span class="card-lang">中文</span>
       <h2 class="card-title">中文简历</h2>
-      <p class="card-meta">完整版 · 2 页 · 2026 年 4 月更新</p>
-      <div class="card-foot">
-        <span class="card-action">查看</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <p class="card-meta">完整版 · 2 页 · 2026 年 5 月更新</p>
+      <span class="card-arrow" aria-hidden="true">→</span>
     </a>
   </div>
 
   <p class="section-label">Descargar PDF / Download / 下载</p>
 
   <div class="downloads">
-    <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download>Pedro_Rojas_CV_ES.pdf</a>
-    <a class="dl" href="Pedro_Rojas_CV_EN.pdf" download>Pedro_Rojas_CV_EN.pdf</a>
-    <a class="dl" href="Pedro_Rojas_CV_ZH.pdf" download>Pedro_Rojas_CV_ZH.pdf</a>
+    <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download hreflang="es">Español <small>(PDF · 340 KB)</small></a>
+    <a class="dl" href="Pedro_Rojas_CV_EN.pdf" download hreflang="en">English <small>(PDF · 328 KB)</small></a>
+    <a class="dl" href="Pedro_Rojas_CV_ZH.pdf" download hreflang="zh">中文 <small>(PDF · 748 KB)</small></a>
   </div>
 
   <p class="section-label">Contacto</p>
@@ -265,6 +307,10 @@
       <span><a href="https://github.com/pedrorojascampuzano-blip" target="_blank" rel="noopener">GitHub</a></span>
     </div>
   </div>
+
+  <footer class="footer">
+    Last updated 2026-05 · <a href="https://github.com/pedrorojascampuzano-blip/cv" target="_blank" rel="noopener">source</a>
+  </footer>
 
 </div>
 

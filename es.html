@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pedro Rojas Campuzano · CV</title>
+<meta name="description" content="CV · Pedro Rojas Campuzano · Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<link rel="canonical" href="https://pedrorojascampuzano-blip.github.io/cv/es.html">
+<link rel="alternate" hreflang="en" href="https://pedrorojascampuzano-blip.github.io/cv/en.html">
+<link rel="alternate" hreflang="zh" href="https://pedrorojascampuzano-blip.github.io/cv/zh.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='52%25' fill='%23fff' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='40' font-weight='700' text-anchor='middle' dominant-baseline='middle'%3EP%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Pedro Rojas Campuzano · CV (ES)">
+<meta property="og:description" content="Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://pedrorojascampuzano-blip.github.io/cv/es.html">
+<meta name="twitter:card" content="summary">
 <style>
   @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
 
@@ -61,6 +71,20 @@
     white-space: nowrap;
   }
   header .meta a { color: var(--grey-1); text-decoration: none; }
+  header .home-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--grey-3);
+    padding-bottom: 1px;
+  }
+  header .home-link:hover { color: var(--ink); border-color: var(--ink); }
+  @media print { header .home-link { display: none; } }
 
   /* SUMMARY */
   .summary {
@@ -232,7 +256,8 @@
 
   /* MOBILE */
   @media screen and (max-width: 560px) {
-    body { padding: 28px 20px; font-size: 10.5pt; }
+    html, body { overflow-x: hidden; }
+    body { padding: 28px 16px; font-size: 11pt; }
 
     header {
       flex-direction: column;
@@ -246,23 +271,43 @@
     header .meta {
       text-align: left;
       white-space: normal;
-      font-size: 9.4pt;
+      word-break: break-word;
+      font-size: 10pt;
       line-height: 1.6;
     }
+    header .home-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-family: "SF Mono", "Menlo", monospace;
+      font-size: 9pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey-2);
+      text-decoration: none;
+      border-bottom: 1px solid var(--grey-3);
+      padding-bottom: 1px;
+    }
 
-    .summary { font-size: 10pt; line-height: 1.55; text-align: left; }
+    .summary {
+      font-size: 11pt;
+      line-height: 1.55;
+      text-align: left;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
 
     .grid {
       grid-template-columns: 1fr;
       gap: 22px;
     }
 
-    aside ul { font-size: 10pt; }
-    aside .tags { font-size: 10pt; line-height: 1.6; }
-    aside .edu p { font-size: 10pt; }
+    aside ul li { justify-content: flex-start; gap: 12px; }
+    aside ul { font-size: 10.5pt; }
+    aside .tags { font-size: 10.5pt; line-height: 1.6; }
+    aside .edu p { font-size: 10.5pt; }
 
     h2 {
-      font-size: 9pt;
+      font-size: 10pt;
       letter-spacing: 1.4px;
       padding-bottom: 6px;
     }
@@ -272,18 +317,27 @@
       align-items: flex-start;
       gap: 2px;
     }
-    .job .title { font-size: 15pt; font-weight: 800; line-height: 1.18; }
-    .job .dates { font-size: 9.4pt; }
-    .job .org { font-size: 9.6pt; }
-    .job ul { font-size: 10pt; line-height: 1.55; }
+    .job .title { font-size: 13pt; font-weight: 700; line-height: 1.22; }
+    .job .dates { font-size: 9.6pt; }
+    .job .org { font-size: 10pt; }
+    .job ul { font-size: 10.5pt; line-height: 1.55; }
 
-    .ai-list { font-size: 10pt; line-height: 1.6; }
+    .ai-list { font-size: 10.5pt; line-height: 1.6; }
 
     .projects-grid {
       grid-template-columns: 1fr;
       gap: 12px;
     }
-    .pair { font-size: 10pt; line-height: 1.55; }
+    .pair { font-size: 10.5pt; line-height: 1.55; }
+  }
+
+  /* A11Y */
+  @media screen {
+    a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
   }
 
   /* PRINT: balanced 2-page layout */
@@ -340,8 +394,9 @@
   <div class="meta">
     Ciudad de México, MX<br>
     +52 55 9186 1118<br>
-    pedro.rojas.campuzano@gmail.com<br>
-    linkedin.com/in/pedro-rojas-campuzano
+    <a href="mailto:pedro.rojas.campuzano@gmail.com" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--grey-3)">pedro.rojas.campuzano@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/pedrorojascampuzano/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--grey-3)">linkedin.com/in/pedro-rojas-campuzano</a>
+    <a class="home-link" href="index.html">EN · 中文</a>
   </div>
 </header>
 
