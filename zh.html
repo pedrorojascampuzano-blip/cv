@@ -284,6 +284,41 @@
     .pair { font-size: 10.2pt; line-height: 1.65; }
   }
 
+  /* PRINT: density override for compact output */
+  @media print {
+    @page { size: A4; margin: 11mm 13mm; }
+    body { font-size: 9pt; line-height: 1.45; }
+
+    header { padding-bottom: 7px; margin-bottom: 11px; }
+    header .name { font-size: 22pt; }
+    header .role { font-size: 9.2pt; }
+    header .meta { font-size: 8.2pt; line-height: 1.5; }
+
+    .summary { font-size: 9pt; line-height: 1.5; margin-bottom: 9px; text-align: left; }
+
+    .grid { gap: 18px; }
+
+    h2 { font-size: 7.8pt; margin: 0 0 6px 0; padding-bottom: 4px; }
+    section { margin-bottom: 9px; }
+
+    aside .block { margin-bottom: 9px; }
+    aside ul { font-size: 8.6pt; line-height: 1.6; }
+    aside .tags { font-size: 8.6pt; line-height: 1.6; }
+    aside .edu p { font-size: 8.6pt; line-height: 1.45; margin: 0 0 6px 0; }
+
+    .job { margin-bottom: 7px; }
+    .job .title { font-size: 10pt; }
+    .job .org { font-size: 8.2pt; margin-bottom: 3px; }
+    .job .dates { font-size: 7.9pt; }
+    .job ul { font-size: 8.6pt; line-height: 1.5; }
+    .job ul li { margin-bottom: 2px; }
+
+    .ai-list { font-size: 8.6pt; line-height: 1.5; }
+    .ai-list p { margin: 0 0 4px 0; }
+
+    .pair { font-size: 8.5pt; line-height: 1.5; }
+  }
+
 </style>
 </head>
 <body>

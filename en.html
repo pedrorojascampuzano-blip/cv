@@ -279,6 +279,48 @@
     .pair { font-size: 10pt; line-height: 1.55; }
   }
 
+  /* PRINT: balanced 2-page layout */
+  @media print {
+    @page { size: A4; margin: 11mm 13mm; }
+    html, body { margin: 0; padding: 0; }
+    body { font-size: 8.8pt; line-height: 1.45; }
+
+    header { padding-bottom: 8px; margin-bottom: 13px; }
+    header .name { font-size: 22pt; }
+    header .role { font-size: 9pt; }
+    header .meta { font-size: 8pt; line-height: 1.5; }
+
+    .summary { font-size: 8.8pt; line-height: 1.5; margin-bottom: 11px; text-align: left; }
+
+    .grid { gap: 18px; }
+
+    h2 { font-size: 7.6pt; margin: 0 0 7px 0; padding-bottom: 4px; }
+    section { margin-bottom: 11px; }
+    section:last-child { margin-bottom: 0; }
+
+    aside .block { margin-bottom: 11px; }
+    aside .block:last-child { margin-bottom: 0; }
+    aside ul { font-size: 8.4pt; line-height: 1.6; }
+    aside .tags { font-size: 8.4pt; line-height: 1.6; }
+    aside .edu p { font-size: 8.4pt; line-height: 1.45; margin: 0 0 7px 0; }
+    aside .edu p:last-child { margin-bottom: 0; }
+
+    .job { margin-bottom: 9px; }
+    .job:last-child { margin-bottom: 0; }
+    .job .title { font-size: 10pt; }
+    .job .org { font-size: 8pt; margin-bottom: 3px; }
+    .job .dates { font-size: 7.8pt; }
+    .job ul { font-size: 8.4pt; line-height: 1.45; }
+    .job ul li { margin-bottom: 2px; }
+
+    .ai-list { font-size: 8.4pt; line-height: 1.45; }
+    .ai-list p { margin: 0 0 4px 0; }
+    .ai-list p:last-child { margin-bottom: 0; }
+
+    .projects-grid { gap: 7px 20px; }
+    .pair { font-size: 8.3pt; line-height: 1.45; }
+  }
+
 </style>
 </head>
 <body>
