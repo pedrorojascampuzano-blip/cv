@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedro Rojas Campuzano · CV</title>
-<meta name="description" content="Curriculum Vitae · Pedro Rojas Campuzano · Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<title>Pedro Rojas Campuzano</title>
+<meta name="description" content="Pedro Rojas Campuzano · Operator and project manager. Client-facing operations, onboarding, and multi-stakeholder programs. Mexico City. Trilingual ES / EN / 中文.">
 <link rel="canonical" href="https://pedrorojascampuzano-blip.github.io/cv/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='52%25' fill='%23fff' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='40' font-weight='700' text-anchor='middle' dominant-baseline='middle'%3EP%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="Pedro Rojas Campuzano · CV">
-<meta property="og:description" content="Operador y consultor en operaciones, infraestructura y sistemas de IA. Ciudad de México.">
+<meta property="og:title" content="Pedro Rojas Campuzano">
+<meta property="og:description" content="Operator and project manager. Client-facing operations, onboarding, and multi-stakeholder programs. Mexico City.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://pedrorojascampuzano-blip.github.io/cv/">
 <meta name="twitter:card" content="summary">
@@ -20,6 +20,8 @@
     --grey-3: #ccc;
     --rule: #1a1a1a;
     --bg: #fafafa;
+    --accent: #2d4a3e;
+    --accent-soft: #93a89b;
   }
 
   * { box-sizing: border-box; }
@@ -36,7 +38,7 @@
 
   .wrap {
     width: 100%;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 80px 32px 60px 32px;
   }
@@ -44,7 +46,7 @@
   .header {
     border-top: 2px solid var(--rule);
     padding-top: 18px;
-    margin-bottom: 56px;
+    margin-bottom: 28px;
   }
 
   .name {
@@ -52,16 +54,30 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 0.98;
-    margin: 0 0 14px 0;
+    margin: 0 0 18px 0;
   }
 
-  .tag {
-    font-size: 14px;
-    color: var(--grey-1);
+  .intro {
+    font-size: clamp(16px, 2.2vw, 19px);
     line-height: 1.5;
-    max-width: 520px;
-    margin: 0;
+    color: var(--ink);
+    max-width: 600px;
+    margin: 0 0 6px 0;
+    font-weight: 400;
   }
+
+  .intro .lede { font-weight: 600; }
+
+  .intro-meta {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--grey-2);
+    margin: 12px 0 0 0;
+  }
+
+  .intro-meta span { white-space: nowrap; }
+  .intro-meta .dot { color: var(--grey-3); margin: 0 8px; }
 
   .section-label {
     font-family: "SF Mono", "Menlo", monospace;
@@ -69,14 +85,55 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--grey-2);
-    margin: 0 0 18px 0;
+    margin: 56px 0 18px 0;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--grey-3);
   }
 
   .section-label::before {
     content: "// ";
-    color: var(--grey-3);
+    color: var(--accent-soft);
+  }
+
+  /* SELECTED WORK */
+  .work { margin-bottom: 8px; }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--grey-3);
+  }
+  .entry:first-child { padding-top: 0; }
+
+  .entry-when {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 11px;
+    color: var(--grey-2);
+    letter-spacing: 0.01em;
+    padding-top: 3px;
+  }
+
+  .entry-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .entry-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 6px 0;
+  }
+
+  .entry-desc {
+    font-size: 14px;
+    color: var(--grey-1);
+    line-height: 1.5;
+    margin: 0;
   }
 
   .grid {
@@ -228,12 +285,20 @@
     html, body { overflow-x: hidden; }
     .wrap { padding: 48px 20px 40px 20px; }
     .grid { grid-template-columns: 1fr; gap: 12px; }
-    .header { margin-bottom: 40px; }
+    .header { margin-bottom: 24px; }
     .name {
       font-size: clamp(32px, 9vw, 48px);
       word-break: break-word;
       hyphens: auto;
     }
+    .intro { font-size: 16px; }
+    .section-label { margin-top: 44px; }
+    .entry {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 14px 0;
+    }
+    .entry-when { padding-top: 0; }
     .card { padding: 20px 18px 46px 18px; gap: 10px; }
     .card-arrow { bottom: 16px; right: 18px; }
     .card-title { font-size: 19px; }
@@ -262,23 +327,80 @@
 
   <header class="header">
     <h1 class="name">Pedro Rojas Campuzano</h1>
-    <p class="tag">Operador y consultor en intersección de operaciones, infraestructura y sistemas de IA. Ciudad de México.</p>
+    <p class="intro">
+      <span class="lede">Operator and project manager with 7+ years taking complex, multi-stakeholder programs to production.</span>
+      I run client-facing operations and onboarding, and I'm used to managing several accounts, projects, and deadlines in parallel, moving between clients, engineering, and product to get things shipped.
+    </p>
+    <p class="intro-meta">
+      <span>Mexico City</span><span class="dot">·</span><span>Remote</span><span class="dot">·</span><span>ES native / EN C1 / 中文</span>
+    </p>
   </header>
 
-  <p class="section-label">Curriculum Vitae</p>
+  <p class="section-label">Selected Work</p>
+
+  <div class="work">
+
+    <div class="entry">
+      <div class="entry-when">2026 — now</div>
+      <div class="entry-body">
+        <p class="entry-title">Semantiks · venture-backed AI startup</p>
+        <p class="entry-role">Channel Partner · Operations</p>
+        <p class="entry-desc">Represent the AI platform and professional-services practice to a LATAM network of founders and enterprise buyers; client-facing onboarding and cross-border operations in a fast-growing startup.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-when">2024 — now</div>
+      <div class="entry-body">
+        <p class="entry-title">Independent Consultant · NotionOps</p>
+        <p class="entry-role">Client onboarding &amp; operations</p>
+        <p class="entry-desc">Onboard client teams onto custom operating systems (CRMs, dashboards, pipelines), with Loom walkthroughs and iterative training until each team is self-sufficient. Clients include CenterPoint Business Advisors (M&amp;A, US) and Jeff Kibbie.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-when">2021 — 2024</div>
+      <div class="entry-body">
+        <p class="entry-title">Cultivo · nature-based solutions &amp; carbon</p>
+        <p class="entry-role">Program Manager</p>
+        <p class="entry-desc">Ran carbon-credit programs across 250,000+ hectares, coordinating 10+ communities, science, finance, and legal workstreams, plus relationships with international investors and corporate offtakers (including Aeroméxico due diligence).</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-when">2019 — 2021</div>
+      <div class="entry-body">
+        <p class="entry-title">Mater Energía · utility-scale solar</p>
+        <p class="entry-role">Project Developer / Project Manager</p>
+        <p class="entry-desc">Managed a 1,550 MW photovoltaic development portfolio across multiple sites, running land, regulatory, environmental, and community workstreams in parallel.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-when">2018 — 2019</div>
+      <div class="entry-body">
+        <p class="entry-title">Xinhua News Agency · international operations</p>
+        <p class="entry-role">Deputy Administrative Coordinator</p>
+        <p class="entry-desc">Trilingual liaison (Spanish–English–Mandarin) between Beijing HQ and the Mexico bureau, handling logistics and admin for international correspondents.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-label">Full CV</p>
 
   <div class="grid">
-    <a class="card" href="es.html" hreflang="es">
-      <span class="card-lang">Español</span>
-      <h2 class="card-title">CV en Español</h2>
-      <p class="card-meta">Versión completa · 2 páginas · actualizada mayo 2026</p>
-      <span class="card-arrow" aria-hidden="true">→</span>
-    </a>
-
     <a class="card" href="en.html" hreflang="en">
       <span class="card-lang">English</span>
       <h2 class="card-title">CV in English</h2>
       <p class="card-meta">Full version · 2 pages · updated May 2026</p>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="card" href="es.html" hreflang="es">
+      <span class="card-lang">Español</span>
+      <h2 class="card-title">CV en Español</h2>
+      <p class="card-meta">Versión completa · 2 páginas · actualizada mayo 2026</p>
       <span class="card-arrow" aria-hidden="true">→</span>
     </a>
 
@@ -290,15 +412,15 @@
     </a>
   </div>
 
-  <p class="section-label">Descargar PDF / Download / 下载</p>
+  <p class="section-label">Download PDF / Descargar / 下载</p>
 
   <div class="downloads">
-    <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download hreflang="es">Español <small>(PDF · 340 KB)</small></a>
     <a class="dl" href="Pedro_Rojas_CV_EN.pdf" download hreflang="en">English <small>(PDF · 328 KB)</small></a>
+    <a class="dl" href="Pedro_Rojas_CV_ES.pdf" download hreflang="es">Español <small>(PDF · 340 KB)</small></a>
     <a class="dl" href="Pedro_Rojas_CV_ZH.pdf" download hreflang="zh">中文 <small>(PDF · 748 KB)</small></a>
   </div>
 
-  <p class="section-label">Contacto</p>
+  <p class="section-label">Contact</p>
 
   <div class="contact">
     <div class="row">
